@@ -1,7 +1,7 @@
 # Resource Group/Location
 variable "location" {}
 
-variable "application_type" {
+variable "application_name" {
     default = "demo"
 }
 variable "resource_type" {

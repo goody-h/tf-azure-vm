@@ -1,12 +1,12 @@
 resource "azurerm_public_ip" "test" {
-  name                = "${var.application_type}-${var.resource_type}-pubip"
+  name                = "${var.application_name}-${var.resource_type}-pubip"
   location            = var.location
   resource_group_name = var.resource_group
   allocation_method   = "Static"
 }
 
 resource "azurerm_network_interface" "nic" {
-  name                = "${var.application_type}-${var.resource_type}-NIC"
+  name                = "${var.application_name}-${var.resource_type}-NIC"
   location            = var.location
   resource_group_name = var.resource_group
 
@@ -19,7 +19,7 @@ resource "azurerm_network_interface" "nic" {
 }
 
 resource "azurerm_linux_virtual_machine" "vm" {
-  name                = "${var.application_type}-${var.resource_type}"
+  name                = "${var.application_name}-${var.resource_type}"
   location            = var.location
   resource_group_name = var.resource_group
   size                = "Standard_B1s"
